@@ -26,7 +26,7 @@ class ACCycleScrollView: UIView, UIScrollViewDelegate {
     var timer: Timer?
     var indexPage = 0
     var timeInterval: TimeInterval?
-    
+
     // placeholder image
     var placeholder: UIImage?
     
@@ -84,6 +84,7 @@ class ACCycleScrollView: UIView, UIScrollViewDelegate {
         
         scrollView = UIScrollView(frame: self.frame)
         scrollView?.delegate = self
+        scrollView?.backgroundColor = UIColor.lightGray
         scrollView?.isPagingEnabled = true
         scrollView?.showsHorizontalScrollIndicator = false
         
