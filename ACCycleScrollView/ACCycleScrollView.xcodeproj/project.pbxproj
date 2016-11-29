@@ -16,8 +16,8 @@
 		4C1BEAE11DEC545B00DD21CB /* ACCycleScrollViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BEAE01DEC545B00DD21CB /* ACCycleScrollViewUITests.swift */; };
 		4C1BEAF01DEC555200DD21CB /* ACCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BEAEF1DEC555200DD21CB /* ACCycleScrollView.swift */; };
 		4C1BEAF31DEC5B7600DD21CB /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BEAF21DEC5B7600DD21CB /* Layout.swift */; };
-		4C7F19DE1DED421A00F527DE /* ACImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F19DD1DED421A00F527DE /* ACImageDownload.swift */; };
 		4C7F19E01DED4BCA00F527DE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F19DF1DED4BCA00F527DE /* Data.swift */; };
+		4C7F19E41DED7F9600F527DE /* ACImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F19E31DED7F9600F527DE /* ACImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 		4C1BEAE21DEC545B00DD21CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1BEAEF1DEC555200DD21CB /* ACCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACCycleScrollView.swift; sourceTree = "<group>"; };
 		4C1BEAF21DEC5B7600DD21CB /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		4C7F19DD1DED421A00F527DE /* ACImageDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACImageDownload.swift; sourceTree = "<group>"; };
 		4C7F19DF1DED4BCA00F527DE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		4C7F19E31DED7F9600F527DE /* ACImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				4C1BEAEF1DEC555200DD21CB /* ACCycleScrollView.swift */,
-				4C7F19DD1DED421A00F527DE /* ACImageDownload.swift */,
+				4C7F19E31DED7F9600F527DE /* ACImageCache.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -288,12 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7F19E41DED7F9600F527DE /* ACImageCache.swift in Sources */,
 				4C1BEAF01DEC555200DD21CB /* ACCycleScrollView.swift in Sources */,
 				4C7F19E01DED4BCA00F527DE /* Data.swift in Sources */,
 				4C1BEAF31DEC5B7600DD21CB /* Layout.swift in Sources */,
 				4C1BEAC31DEC545B00DD21CB /* ViewController.swift in Sources */,
 				4C1BEAC11DEC545B00DD21CB /* AppDelegate.swift in Sources */,
-				4C7F19DE1DED421A00F527DE /* ACImageDownload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

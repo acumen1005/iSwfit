@@ -9,6 +9,8 @@
 import UIKit
 
 
+typealias completionClosure = (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void
+
 class ACCycleScrollView: UIView, UIScrollViewDelegate {
 
     // MRAK: - prioprty
@@ -20,9 +22,13 @@ class ACCycleScrollView: UIView, UIScrollViewDelegate {
         }
     }
     var images: NSArray?
+    var imageViews: NSMutableArray?
     var timer: Timer?
     var indexPage = 0
     var timeInterval: TimeInterval?
+    
+    // placeholder image
+    var placeholder: UIImage?
     
     // MARK: - life cycle
     
@@ -31,19 +37,25 @@ class ACCycleScrollView: UIView, UIScrollViewDelegate {
     }
     
     public convenience init(frame: CGRect, images: NSArray) {
-        self.init(frame:frame, images: images, timeInterval:0)
+        self.init(frame:frame, images: images, timeInterval: 100000)
     }
     
-    public init(frame: CGRect, images: NSArray, timeInterval: TimeInterval){
+    public convenience init(frame: CGRect, images: NSArray, timeInterval: TimeInterval){
+        self.init(frame:frame, images: images, timeInterval:timeInterval, placeholder:UIImage(named: "loading")!)
+    }
+    
+    public init(frame: CGRect, images: NSArray, timeInterval: TimeInterval, placeholder: UIImage) {
         super.init(frame: frame)
         
         self.images = images
         self.timeInterval = timeInterval
+        self.placeholder = placeholder
         
         _configSubViews()
-        _configImages()
+        _routeImageAction(images: self.images!)
         _configData()
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -87,30 +99,105 @@ class ACCycleScrollView: UIView, UIScrollViewDelegate {
         pageControl?.currentPage = 0
         pageControl?.layer.zPosition = 1000
         
+        self.imageViews = NSMutableArray()
+        for _ in self.images! {
+            self.imageViews!.add(UIImageView())
+        }
+    
         appDelegate?.keyWindow?.addSubview(pageControl!)
         self.addSubview(scrollView!)
     }
     
-    private func _configImages() {
+    private func _configLocalImages(images: NSArray) {
         
         var x: CGFloat = 0.0
         
-        for imageName in self.images! {
+        for (index, imageName) in self.images!.enumerated() {
+            let tmpImageView = self.imageViews?[index] as! UIImageView
             
-            let imageView = _renderImageViewWithImageName(imageName: imageName as! NSString);
-            imageView.frame = CGRect(x: x, y: 0, width: SCREEN_WIDTH, height: (scrollView?.frame.size.height)!)
+            tmpImageView.image = _renderImageWithLocalImage(imageName: imageName as! NSString);
+            tmpImageView.frame = CGRect(x: x, y: 0, width: SCREEN_WIDTH, height: (scrollView?.frame.size.height)!)
             x = x + SCREEN_WIDTH
             
-            scrollView?.addSubview(imageView)
+            scrollView?.addSubview(tmpImageView)
         }
         
         scrollView?.contentSize = CGSize(width: x , height: (scrollView?.frame.size.height)!)
-        
     }
     
-    private func _renderImageViewWithImageName(imageName: NSString) -> UIImageView {
+    
+    private func _configNetworkImages(images: NSArray) {
         
-        return UIImageView(image: UIImage(named: imageName as String))
+        var x: CGFloat = 0.0
+        
+        for (index,imageUrl) in self.images!.enumerated() {
+            
+            let tmpImageView = self.imageViews?[index] as! UIImageView
+            tmpImageView.image = self.placeholder
+            tmpImageView.frame = CGRect(x: x, y: 0, width: SCREEN_WIDTH, height: (self.scrollView?.frame.size.height)!)
+            x = x + SCREEN_WIDTH
+            self.scrollView?.addSubview(tmpImageView)
+            
+            _renderImageViewWithNetworkImage(imageUrl: imageUrl as! NSString, compation:{(data: Data?) -> Void in
+            
+                tmpImageView.image = UIImage(data: data!)
+            })
+        }
+        
+        scrollView?.contentSize = CGSize(width: x , height: (scrollView?.frame.size.height)!)
+    }
+    
+    private func _renderImageWithLocalImage(imageName: NSString) -> UIImage {
+        
+        return UIImage(named: imageName as String)!
+    }
+    
+    
+    private func _renderImageViewWithNetworkImage(imageUrl: NSString, compation:@escaping ((Data?) -> Void)) -> Void {
+        
+        assert(imageUrl.hasPrefix("http"), "the parameter is't a url")
+        
+        if ACImageCache.shared.isExist(forKey: imageUrl) {
+            
+            let image = ACImageCache.shared.getImageCacheFromMomery(forKey: imageUrl)
+            
+            compation(image)
+            return ;
+        }
+        
+        _getNetworkImage(url: imageUrl, closure: {
+            (data: Data?, repsonse: URLResponse?, error: Error?) -> Void in
+            
+            if((error) == nil) {
+                ACImageCache.shared.setImageCache2MomeryWithData(data!, forKey: imageUrl)
+                compation(data!)
+            }
+            else {
+                
+            }
+        })
+    }
+    
+    func _routeImageAction(images: NSArray) {
+        
+        let str = images[0] as! NSString
+        if(!str.hasPrefix("http")) {
+            _configLocalImages(images: images)
+        }
+        else {
+            _configNetworkImages(images: images)
+        }
+    }
+    
+    func _getNetworkImage(url: NSString, closure: @escaping (Data?, URLResponse?, Error?) -> Void) -> Void {
+        
+        let session = URLSession.shared
+        
+        let request = URLRequest(url: URL(string: url as String)!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15.0)
+        
+        let dataTask = session.dataTask(with: request, completionHandler:closure)
+        
+        dataTask.resume()
     }
     
     //  MARK: - public methods
@@ -146,4 +233,5 @@ class ACCycleScrollView: UIView, UIScrollViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         _resetTimer()
     }
+
 }
