@@ -111,15 +111,13 @@ class ACCycleScrollView: UIView, UIScrollViewDelegate {
     private func _configLocalImages(images: NSArray) {
         
         var x: CGFloat = 0.0
-        
         for (index, imageName) in self.images!.enumerated() {
             let tmpImageView = self.imageViews?[index] as! UIImageView
-            
-            tmpImageView.image = _renderImageWithLocalImage(imageName: imageName as! NSString);
-            tmpImageView.frame = CGRect(x: x, y: 0, width: SCREEN_WIDTH, height: (scrollView?.frame.size.height)!)
+            tmpImageView.frame = CGRect(x: x, y: 0, width: SCREEN_WIDTH, height: (self.scrollView?.frame.size.height)!)
             x = x + SCREEN_WIDTH
             
-            scrollView?.addSubview(tmpImageView)
+            tmpImageView.image = self._renderImageWithLocalImage(imageName: imageName as! NSString);
+            self.scrollView?.addSubview(tmpImageView)
         }
         
         scrollView?.contentSize = CGSize(width: x , height: (scrollView?.frame.size.height)!)
@@ -129,19 +127,23 @@ class ACCycleScrollView: UIView, UIScrollViewDelegate {
     private func _configNetworkImages(images: NSArray) {
         
         var x: CGFloat = 0.0
-        
         for (index,imageUrl) in self.images!.enumerated() {
-            
+                
             let tmpImageView = self.imageViews?[index] as! UIImageView
             tmpImageView.image = self.placeholder
             tmpImageView.frame = CGRect(x: x, y: 0, width: SCREEN_WIDTH, height: (self.scrollView?.frame.size.height)!)
             x = x + SCREEN_WIDTH
-            self.scrollView?.addSubview(tmpImageView)
             
-            _renderImageViewWithNetworkImage(imageUrl: imageUrl as! NSString, compation:{(data: Data?) -> Void in
-            
-                tmpImageView.image = UIImage(data: data!)
-            })
+            DispatchQueue.global().async {
+                self._renderImageViewWithNetworkImage(imageUrl: imageUrl as! NSString, compation:{(data: Data?) -> Void in
+                    
+                    DispatchQueue.main.async {
+                        tmpImageView.image = UIImage(data: data!)
+                        self.scrollView?.addSubview(tmpImageView)
+                    }
+                })
+            }
+
         }
         
         scrollView?.contentSize = CGSize(width: x , height: (scrollView?.frame.size.height)!)
