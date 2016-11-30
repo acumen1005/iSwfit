@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="ACHistoryCell" customModule="ACSearchViewController" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kg-zk-qyi">
+                        <rect key="frame" x="144" y="34" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfr-7V-RvS">
+                        <rect key="frame" x="0.0" y="82" width="320" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="96t-yL-I47"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="qfr-7V-RvS" secondAttribute="trailing" id="3D0-4B-DHg"/>
+                    <constraint firstItem="3kg-zk-qyi" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="81F-1c-Nkg"/>
+                    <constraint firstItem="3kg-zk-qyi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VHF-0W-1DV"/>
+                    <constraint firstAttribute="bottom" secondItem="qfr-7V-RvS" secondAttribute="bottom" id="grU-er-8e8"/>
+                    <constraint firstItem="qfr-7V-RvS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qhs-xz-9c3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="historyLabel" destination="3kg-zk-qyi" id="fpj-fa-JmE"/>
+            </connections>
+            <point key="canvasLocation" x="32" y="93.5"/>
+        </tableViewCell>
+    </objects>
+</document>

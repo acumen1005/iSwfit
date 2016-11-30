@@ -16,6 +16,7 @@ enum ACImageCachePolicy: Int {
 
 class ACImageCache: NSObject {
     
+    var imageDisk: NSDictionary?
     var imageMomery: NSCache<NSString, AnyObject>?
     var fileManager = FileManager.default
     
@@ -39,13 +40,14 @@ class ACImageCache: NSObject {
 //            fileManager.createFile(atPath: CACHE_IMAGE_PATH, contents: data!, attributes: [:])
 //        }
 //    }
-
-//    func getImageCacheFromDisk(forKey: NSString) -> UIImage {
+//
+//    func getImageCacheFromDisk(forKey: NSString) -> Data {
 //        
 //        if !fileManager.fileExists(atPath: CACHE_IMAGE_PATH) {
 //            print("file dose not exist")
+//            return Data()
 //        } else {
-//            fileManager.
+//            return fileManager.contents(atPath: CACHE_IMAGE_PATH)!
 //        }
 //    }
     
@@ -63,7 +65,6 @@ class ACImageCache: NSObject {
     func getImageCacheFromMomery(forKey: NSString) -> Data {
         
         if isExist(forKey: forKey) {
-            
             return (ACImageCache.shared.imageMomery?.object(forKey: forKey))! as! Data
         }
         else {
@@ -71,8 +72,11 @@ class ACImageCache: NSObject {
         }
     }
     
+    // 1. judge the momery first, if don't exit, then judge the disk
+    
     func isExist(forKey: NSString) -> Bool {
         let cache = ACImageCache.shared.imageMomery?.object(forKey: forKey)
+        
         
         return cache != nil
     }

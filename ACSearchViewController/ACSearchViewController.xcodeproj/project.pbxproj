@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CBA483E1DEEC05F00D4A48B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA483D1DEEC05F00D4A48B /* AppDelegate.swift */; };
+		4CBA48401DEEC05F00D4A48B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA483F1DEEC05F00D4A48B /* ViewController.swift */; };
+		4CBA48431DEEC05F00D4A48B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA48411DEEC05F00D4A48B /* Main.storyboard */; };
+		4CBA48451DEEC05F00D4A48B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA48441DEEC05F00D4A48B /* Assets.xcassets */; };
+		4CBA48481DEEC05F00D4A48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA48461DEEC05F00D4A48B /* LaunchScreen.storyboard */; };
+		4CBA48531DEEC05F00D4A48B /* ACSearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA48521DEEC05F00D4A48B /* ACSearchViewControllerTests.swift */; };
+		4CBA485E1DEEC05F00D4A48B /* ACSearchViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA485D1DEEC05F00D4A48B /* ACSearchViewControllerUITests.swift */; };
+		4CBA486E1DEEC11A00D4A48B /* ACSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA486D1DEEC11A00D4A48B /* ACSearchBar.swift */; };
+		4CDEF5AB1DEECFE2002AAC00 /* ACSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDEF5A91DEECFE2002AAC00 /* ACSearchController.xib */; };
+		4CDEF5AD1DEED0F3002AAC00 /* ACSearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5AC1DEED0F3002AAC00 /* ACSearchResultController.swift */; };
+		4CDEF5AF1DEEDD00002AAC00 /* ACSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5AE1DEEDD00002AAC00 /* ACSearchViewController.swift */; };
+		4CDEF5B31DEEEA89002AAC00 /* ACSearchTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5B11DEEEA89002AAC00 /* ACSearchTitleCell.swift */; };
+		4CDEF5B41DEEEA89002AAC00 /* ACSearchTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDEF5B21DEEEA89002AAC00 /* ACSearchTitleCell.xib */; };
+		4CDEF5B71DEEEAA1002AAC00 /* ACSearchContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5B51DEEEAA1002AAC00 /* ACSearchContentCell.swift */; };
+		4CDEF5B81DEEEAA1002AAC00 /* ACSearchContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDEF5B61DEEEAA1002AAC00 /* ACSearchContentCell.xib */; };
+		4CDEF5BA1DEEF373002AAC00 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5B91DEEF373002AAC00 /* Layout.swift */; };
+		4CDEF5BD1DEEF5E3002AAC00 /* ACHotSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5BB1DEEF5E3002AAC00 /* ACHotSearchCell.swift */; };
+		4CDEF5BE1DEEF5E3002AAC00 /* ACHotSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDEF5BC1DEEF5E3002AAC00 /* ACHotSearchCell.xib */; };
+		4CDEF5C01DEEFE4D002AAC00 /* ACHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5BF1DEEFE4D002AAC00 /* ACHistoryView.swift */; };
+		4CDEF5C91DEF063D002AAC00 /* ACHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5C71DEF063D002AAC00 /* ACHistoryCell.swift */; };
+		4CDEF5CA1DEF063D002AAC00 /* ACHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDEF5C81DEF063D002AAC00 /* ACHistoryCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CBA484F1DEEC05F00D4A48B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CBA48321DEEC05F00D4A48B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CBA48391DEEC05F00D4A48B;
+			remoteInfo = ACSearchViewController;
+		};
+		4CBA485A1DEEC05F00D4A48B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CBA48321DEEC05F00D4A48B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CBA48391DEEC05F00D4A48B;
+			remoteInfo = ACSearchViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CBA483A1DEEC05F00D4A48B /* ACSearchViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACSearchViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBA483D1DEEC05F00D4A48B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4CBA483F1DEEC05F00D4A48B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CBA48421DEEC05F00D4A48B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4CBA48441DEEC05F00D4A48B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CBA48471DEEC05F00D4A48B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4CBA48491DEEC05F00D4A48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CBA484E1DEEC05F00D4A48B /* ACSearchViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACSearchViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBA48521DEEC05F00D4A48B /* ACSearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACSearchViewControllerTests.swift; sourceTree = "<group>"; };
+		4CBA48541DEEC05F00D4A48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CBA48591DEEC05F00D4A48B /* ACSearchViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACSearchViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBA485D1DEEC05F00D4A48B /* ACSearchViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACSearchViewControllerUITests.swift; sourceTree = "<group>"; };
+		4CBA485F1DEEC05F00D4A48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CBA486D1DEEC11A00D4A48B /* ACSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchBar.swift; sourceTree = "<group>"; };
+		4CDEF5A91DEECFE2002AAC00 /* ACSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACSearchController.xib; sourceTree = "<group>"; };
+		4CDEF5AC1DEED0F3002AAC00 /* ACSearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchResultController.swift; sourceTree = "<group>"; };
+		4CDEF5AE1DEEDD00002AAC00 /* ACSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchViewController.swift; sourceTree = "<group>"; };
+		4CDEF5B11DEEEA89002AAC00 /* ACSearchTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchTitleCell.swift; sourceTree = "<group>"; };
+		4CDEF5B21DEEEA89002AAC00 /* ACSearchTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACSearchTitleCell.xib; sourceTree = "<group>"; };
+		4CDEF5B51DEEEAA1002AAC00 /* ACSearchContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchContentCell.swift; sourceTree = "<group>"; };
+		4CDEF5B61DEEEAA1002AAC00 /* ACSearchContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACSearchContentCell.xib; sourceTree = "<group>"; };
+		4CDEF5B91DEEF373002AAC00 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		4CDEF5BB1DEEF5E3002AAC00 /* ACHotSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHotSearchCell.swift; sourceTree = "<group>"; };
+		4CDEF5BC1DEEF5E3002AAC00 /* ACHotSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACHotSearchCell.xib; sourceTree = "<group>"; };
+		4CDEF5BF1DEEFE4D002AAC00 /* ACHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHistoryView.swift; sourceTree = "<group>"; };
+		4CDEF5C71DEF063D002AAC00 /* ACHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHistoryCell.swift; sourceTree = "<group>"; };
+		4CDEF5C81DEF063D002AAC00 /* ACHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACHistoryCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CBA48371DEEC05F00D4A48B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA484B1DEEC05F00D4A48B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA48561DEEC05F00D4A48B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CBA48311DEEC05F00D4A48B = {
+			isa = PBXGroup;
+			children = (
+				4CBA483C1DEEC05F00D4A48B /* ACSearchViewController */,
+				4CBA48511DEEC05F00D4A48B /* ACSearchViewControllerTests */,
+				4CBA485C1DEEC05F00D4A48B /* ACSearchViewControllerUITests */,
+				4CBA483B1DEEC05F00D4A48B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CBA483B1DEEC05F00D4A48B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA483A1DEEC05F00D4A48B /* ACSearchViewController.app */,
+				4CBA484E1DEEC05F00D4A48B /* ACSearchViewControllerTests.xctest */,
+				4CBA48591DEEC05F00D4A48B /* ACSearchViewControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CBA483C1DEEC05F00D4A48B /* ACSearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA486B1DEEC0AA00D4A48B /* Classes */,
+				4CBA486C1DEEC0AA00D4A48B /* Conts */,
+				4CBA483D1DEEC05F00D4A48B /* AppDelegate.swift */,
+				4CBA483F1DEEC05F00D4A48B /* ViewController.swift */,
+				4CBA48411DEEC05F00D4A48B /* Main.storyboard */,
+				4CBA48441DEEC05F00D4A48B /* Assets.xcassets */,
+				4CBA48461DEEC05F00D4A48B /* LaunchScreen.storyboard */,
+				4CBA48491DEEC05F00D4A48B /* Info.plist */,
+			);
+			path = ACSearchViewController;
+			sourceTree = "<group>";
+		};
+		4CBA48511DEEC05F00D4A48B /* ACSearchViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA48521DEEC05F00D4A48B /* ACSearchViewControllerTests.swift */,
+				4CBA48541DEEC05F00D4A48B /* Info.plist */,
+			);
+			path = ACSearchViewControllerTests;
+			sourceTree = "<group>";
+		};
+		4CBA485C1DEEC05F00D4A48B /* ACSearchViewControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA485D1DEEC05F00D4A48B /* ACSearchViewControllerUITests.swift */,
+				4CBA485F1DEEC05F00D4A48B /* Info.plist */,
+			);
+			path = ACSearchViewControllerUITests;
+			sourceTree = "<group>";
+		};
+		4CBA486B1DEEC0AA00D4A48B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4CDEF5B01DEEEA31002AAC00 /* Cell */,
+				4CBA486D1DEEC11A00D4A48B /* ACSearchBar.swift */,
+				4CDEF5A91DEECFE2002AAC00 /* ACSearchController.xib */,
+				4CDEF5AC1DEED0F3002AAC00 /* ACSearchResultController.swift */,
+				4CDEF5AE1DEEDD00002AAC00 /* ACSearchViewController.swift */,
+				4CDEF5BF1DEEFE4D002AAC00 /* ACHistoryView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4CBA486C1DEEC0AA00D4A48B /* Conts */ = {
+			isa = PBXGroup;
+			children = (
+				4CDEF5B91DEEF373002AAC00 /* Layout.swift */,
+			);
+			path = Conts;
+			sourceTree = "<group>";
+		};
+		4CDEF5B01DEEEA31002AAC00 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4CDEF5BB1DEEF5E3002AAC00 /* ACHotSearchCell.swift */,
+				4CDEF5BC1DEEF5E3002AAC00 /* ACHotSearchCell.xib */,
+				4CDEF5B11DEEEA89002AAC00 /* ACSearchTitleCell.swift */,
+				4CDEF5B21DEEEA89002AAC00 /* ACSearchTitleCell.xib */,
+				4CDEF5B51DEEEAA1002AAC00 /* ACSearchContentCell.swift */,
+				4CDEF5B61DEEEAA1002AAC00 /* ACSearchContentCell.xib */,
+				4CDEF5C71DEF063D002AAC00 /* ACHistoryCell.swift */,
+				4CDEF5C81DEF063D002AAC00 /* ACHistoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CBA48391DEEC05F00D4A48B /* ACSearchViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBA48621DEEC05F00D4A48B /* Build configuration list for PBXNativeTarget "ACSearchViewController" */;
+			buildPhases = (
+				4CBA48361DEEC05F00D4A48B /* Sources */,
+				4CBA48371DEEC05F00D4A48B /* Frameworks */,
+				4CBA48381DEEC05F00D4A48B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACSearchViewController;
+			productName = ACSearchViewController;
+			productReference = 4CBA483A1DEEC05F00D4A48B /* ACSearchViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CBA484D1DEEC05F00D4A48B /* ACSearchViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBA48651DEEC05F00D4A48B /* Build configuration list for PBXNativeTarget "ACSearchViewControllerTests" */;
+			buildPhases = (
+				4CBA484A1DEEC05F00D4A48B /* Sources */,
+				4CBA484B1DEEC05F00D4A48B /* Frameworks */,
+				4CBA484C1DEEC05F00D4A48B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CBA48501DEEC05F00D4A48B /* PBXTargetDependency */,
+			);
+			name = ACSearchViewControllerTests;
+			productName = ACSearchViewControllerTests;
+			productReference = 4CBA484E1DEEC05F00D4A48B /* ACSearchViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4CBA48581DEEC05F00D4A48B /* ACSearchViewControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBA48681DEEC05F00D4A48B /* Build configuration list for PBXNativeTarget "ACSearchViewControllerUITests" */;
+			buildPhases = (
+				4CBA48551DEEC05F00D4A48B /* Sources */,
+				4CBA48561DEEC05F00D4A48B /* Frameworks */,
+				4CBA48571DEEC05F00D4A48B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CBA485B1DEEC05F00D4A48B /* PBXTargetDependency */,
+			);
+			name = ACSearchViewControllerUITests;
+			productName = ACSearchViewControllerUITests;
+			productReference = 4CBA48591DEEC05F00D4A48B /* ACSearchViewControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CBA48321DEEC05F00D4A48B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = acumen;
+				TargetAttributes = {
+					4CBA48391DEEC05F00D4A48B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = F2F97WXGN3;
+						ProvisioningStyle = Manual;
+					};
+					4CBA484D1DEEC05F00D4A48B = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4CBA48391DEEC05F00D4A48B;
+					};
+					4CBA48581DEEC05F00D4A48B = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4CBA48391DEEC05F00D4A48B;
+					};
+				};
+			};
+			buildConfigurationList = 4CBA48351DEEC05F00D4A48B /* Build configuration list for PBXProject "ACSearchViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CBA48311DEEC05F00D4A48B;
+			productRefGroup = 4CBA483B1DEEC05F00D4A48B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CBA48391DEEC05F00D4A48B /* ACSearchViewController */,
+				4CBA484D1DEEC05F00D4A48B /* ACSearchViewControllerTests */,
+				4CBA48581DEEC05F00D4A48B /* ACSearchViewControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CBA48381DEEC05F00D4A48B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CDEF5CA1DEF063D002AAC00 /* ACHistoryCell.xib in Resources */,
+				4CDEF5BE1DEEF5E3002AAC00 /* ACHotSearchCell.xib in Resources */,
+				4CDEF5B41DEEEA89002AAC00 /* ACSearchTitleCell.xib in Resources */,
+				4CBA48481DEEC05F00D4A48B /* LaunchScreen.storyboard in Resources */,
+				4CDEF5AB1DEECFE2002AAC00 /* ACSearchController.xib in Resources */,
+				4CBA48451DEEC05F00D4A48B /* Assets.xcassets in Resources */,
+				4CBA48431DEEC05F00D4A48B /* Main.storyboard in Resources */,
+				4CDEF5B81DEEEAA1002AAC00 /* ACSearchContentCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA484C1DEEC05F00D4A48B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA48571DEEC05F00D4A48B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CBA48361DEEC05F00D4A48B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBA486E1DEEC11A00D4A48B /* ACSearchBar.swift in Sources */,
+				4CDEF5AF1DEEDD00002AAC00 /* ACSearchViewController.swift in Sources */,
+				4CDEF5AD1DEED0F3002AAC00 /* ACSearchResultController.swift in Sources */,
+				4CDEF5C91DEF063D002AAC00 /* ACHistoryCell.swift in Sources */,
+				4CDEF5C01DEEFE4D002AAC00 /* ACHistoryView.swift in Sources */,
+				4CBA48401DEEC05F00D4A48B /* ViewController.swift in Sources */,
+				4CDEF5BD1DEEF5E3002AAC00 /* ACHotSearchCell.swift in Sources */,
+				4CDEF5B71DEEEAA1002AAC00 /* ACSearchContentCell.swift in Sources */,
+				4CDEF5BA1DEEF373002AAC00 /* Layout.swift in Sources */,
+				4CDEF5B31DEEEA89002AAC00 /* ACSearchTitleCell.swift in Sources */,
+				4CBA483E1DEEC05F00D4A48B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA484A1DEEC05F00D4A48B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBA48531DEEC05F00D4A48B /* ACSearchViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA48551DEEC05F00D4A48B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBA485E1DEEC05F00D4A48B /* ACSearchViewControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CBA48501DEEC05F00D4A48B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CBA48391DEEC05F00D4A48B /* ACSearchViewController */;
+			targetProxy = 4CBA484F1DEEC05F00D4A48B /* PBXContainerItemProxy */;
+		};
+		4CBA485B1DEEC05F00D4A48B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CBA48391DEEC05F00D4A48B /* ACSearchViewController */;
+			targetProxy = 4CBA485A1DEEC05F00D4A48B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4CBA48411DEEC05F00D4A48B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBA48421DEEC05F00D4A48B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4CBA48461DEEC05F00D4A48B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBA48471DEEC05F00D4A48B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CBA48601DEEC05F00D4A48B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CBA48611DEEC05F00D4A48B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CBA48631DEEC05F00D4A48B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F2F97WXGN3;
+				INFOPLIST_FILE = ACSearchViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acumen.ACSearchViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72db82b9-bc33-43d0-8b71-a80f31e80c13";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Development;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4CBA48641DEEC05F00D4A48B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F2F97WXGN3;
+				INFOPLIST_FILE = ACSearchViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acumen.ACSearchViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "72db82b9-bc33-43d0-8b71-a80f31e80c13";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Development;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4CBA48661DEEC05F00D4A48B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ACSearchViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acumen.ACSearchViewControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACSearchViewController.app/ACSearchViewController";
+			};
+			name = Debug;
+		};
+		4CBA48671DEEC05F00D4A48B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ACSearchViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acumen.ACSearchViewControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACSearchViewController.app/ACSearchViewController";
+			};
+			name = Release;
+		};
+		4CBA48691DEEC05F00D4A48B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = ACSearchViewControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acumen.ACSearchViewControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ACSearchViewController;
+			};
+			name = Debug;
+		};
+		4CBA486A1DEEC05F00D4A48B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = ACSearchViewControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acumen.ACSearchViewControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ACSearchViewController;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CBA48351DEEC05F00D4A48B /* Build configuration list for PBXProject "ACSearchViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBA48601DEEC05F00D4A48B /* Debug */,
+				4CBA48611DEEC05F00D4A48B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CBA48621DEEC05F00D4A48B /* Build configuration list for PBXNativeTarget "ACSearchViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBA48631DEEC05F00D4A48B /* Debug */,
+				4CBA48641DEEC05F00D4A48B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CBA48651DEEC05F00D4A48B /* Build configuration list for PBXNativeTarget "ACSearchViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBA48661DEEC05F00D4A48B /* Debug */,
+				4CBA48671DEEC05F00D4A48B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CBA48681DEEC05F00D4A48B /* Build configuration list for PBXNativeTarget "ACSearchViewControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBA48691DEEC05F00D4A48B /* Debug */,
+				4CBA486A1DEEC05F00D4A48B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CBA48321DEEC05F00D4A48B /* Project object */;
+}
