@@ -20,7 +20,7 @@ self.view.addSubview(cycleScrollView!)
 ```    
 
 ### ACSearchViewController
-一次搜索 ＋ 热门搜索 ＋ 搜索纪录的控件
+一个搜索 ＋ 热门搜索 ＋ 搜索纪录的控件
 
 ![](ACSearchViewController.gif)  
 
