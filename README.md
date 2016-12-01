@@ -17,5 +17,11 @@ let rect = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH/5.0 * 2.
 cycleScrollView = ACCycleScrollView(frame: rect, images: imageUrls as NSArray, timeInterval: 3.0)
         
 self.view.addSubview(cycleScrollView!)
-```  
+```    
+
+### ACSearchViewController
+一次搜索 ＋ 热门搜索 ＋ 搜索纪录的控件
+
+![](ACSearchViewController.gif)  
+
 
