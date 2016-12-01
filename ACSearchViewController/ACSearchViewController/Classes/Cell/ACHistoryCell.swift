@@ -15,8 +15,6 @@ class ACHistoryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        historyLabel.text = "小羊皮"
     }
 
     public func sethistoryLabel(string: NSString)  {

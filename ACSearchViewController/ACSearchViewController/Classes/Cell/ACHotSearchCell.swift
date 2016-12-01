@@ -21,4 +21,8 @@ class ACHotSearchCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.groupTableViewBackground.cgColor
     }
 
+    public func setContentLabel(string: String){
+        contentLabel.text = string
+    }
+    
 }

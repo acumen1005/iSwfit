@@ -8,30 +8,49 @@
 
 import UIKit
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: ACBaseViewController, UISearchBarDelegate {
 
-    var searchBar: ACSearchBar?
+    var searchBar: UISearchBar?
     var backButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
         
-        searchBar = ACSearchBar(frame: CGRect.zero)
-        searchBar?.barStyle = .default
-        searchBar?.delegate = self
-        searchBar?.searchBarStyle = .minimal
-        
-        backButton = UIBarButtonItem(image: UIImage(named: "icon_book_mark"), style: .plain, target: self, action: #selector(onClick2Back))
-        
-        self.navigationItem.leftBarButtonItem = backButton
-        self.navigationItem.titleView = searchBar
+        configSubViews()
+        configNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - private methods
+    
+    func configSubViews() {
+        
+        searchBar = UISearchBar(frame: CGRect.zero)
+        searchBar?.barStyle = .default
+        searchBar?.delegate = self
+        searchBar?.searchBarStyle = .minimal
+    }
+    
+    func configNavigationBar() {
+        
+        backButton = UIBarButtonItem(image: UIImage(named: "icon_book_mark"), style: .plain, target: self, action: #selector(onClick2Back))
+        
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.titleView = searchBar
+    }
+    
+    func pushSearchController() {
+        
+        let searchController: ACSearchViewController = ACSearchViewController()
+        
+        self.navigationController?.pushViewController(searchController, animated: true)
+    }
+    
     
     
     // MARK: - UISearchBarDelegate
@@ -43,20 +62,5 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
         return false
     }
-    
-    
-    func onClick2Back() {
-    
-    }
-    
-    // MARK: - 
-    
-    func pushSearchController() {
-    
-        let searchController: ACSearchViewController = ACSearchViewController()
-        
-        self.navigationController?.pushViewController(searchController, animated: true)
-    }
-
 }
 

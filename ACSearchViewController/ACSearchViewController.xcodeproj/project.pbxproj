@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C4AA7D81DEFD07600E23A9C /* ACBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AA7D71DEFD07600E23A9C /* ACBaseViewController.swift */; };
+		4C4AA7DA1DEFF7A500E23A9C /* conts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AA7D91DEFF7A500E23A9C /* conts.swift */; };
 		4CBA483E1DEEC05F00D4A48B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA483D1DEEC05F00D4A48B /* AppDelegate.swift */; };
 		4CBA48401DEEC05F00D4A48B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA483F1DEEC05F00D4A48B /* ViewController.swift */; };
 		4CBA48431DEEC05F00D4A48B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA48411DEEC05F00D4A48B /* Main.storyboard */; };
@@ -14,8 +16,6 @@
 		4CBA48481DEEC05F00D4A48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA48461DEEC05F00D4A48B /* LaunchScreen.storyboard */; };
 		4CBA48531DEEC05F00D4A48B /* ACSearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA48521DEEC05F00D4A48B /* ACSearchViewControllerTests.swift */; };
 		4CBA485E1DEEC05F00D4A48B /* ACSearchViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA485D1DEEC05F00D4A48B /* ACSearchViewControllerUITests.swift */; };
-		4CBA486E1DEEC11A00D4A48B /* ACSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA486D1DEEC11A00D4A48B /* ACSearchBar.swift */; };
-		4CDEF5AB1DEECFE2002AAC00 /* ACSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDEF5A91DEECFE2002AAC00 /* ACSearchController.xib */; };
 		4CDEF5AD1DEED0F3002AAC00 /* ACSearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5AC1DEED0F3002AAC00 /* ACSearchResultController.swift */; };
 		4CDEF5AF1DEEDD00002AAC00 /* ACSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5AE1DEEDD00002AAC00 /* ACSearchViewController.swift */; };
 		4CDEF5B31DEEEA89002AAC00 /* ACSearchTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEF5B11DEEEA89002AAC00 /* ACSearchTitleCell.swift */; };
@@ -48,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C4AA7D71DEFD07600E23A9C /* ACBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACBaseViewController.swift; sourceTree = "<group>"; };
+		4C4AA7D91DEFF7A500E23A9C /* conts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conts.swift; sourceTree = "<group>"; };
 		4CBA483A1DEEC05F00D4A48B /* ACSearchViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACSearchViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBA483D1DEEC05F00D4A48B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CBA483F1DEEC05F00D4A48B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +63,6 @@
 		4CBA48591DEEC05F00D4A48B /* ACSearchViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACSearchViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBA485D1DEEC05F00D4A48B /* ACSearchViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACSearchViewControllerUITests.swift; sourceTree = "<group>"; };
 		4CBA485F1DEEC05F00D4A48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CBA486D1DEEC11A00D4A48B /* ACSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchBar.swift; sourceTree = "<group>"; };
-		4CDEF5A91DEECFE2002AAC00 /* ACSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACSearchController.xib; sourceTree = "<group>"; };
 		4CDEF5AC1DEED0F3002AAC00 /* ACSearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchResultController.swift; sourceTree = "<group>"; };
 		4CDEF5AE1DEEDD00002AAC00 /* ACSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchViewController.swift; sourceTree = "<group>"; };
 		4CDEF5B11DEEEA89002AAC00 /* ACSearchTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACSearchTitleCell.swift; sourceTree = "<group>"; };
@@ -159,8 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDEF5B01DEEEA31002AAC00 /* Cell */,
-				4CBA486D1DEEC11A00D4A48B /* ACSearchBar.swift */,
-				4CDEF5A91DEECFE2002AAC00 /* ACSearchController.xib */,
+				4C4AA7D71DEFD07600E23A9C /* ACBaseViewController.swift */,
 				4CDEF5AC1DEED0F3002AAC00 /* ACSearchResultController.swift */,
 				4CDEF5AE1DEEDD00002AAC00 /* ACSearchViewController.swift */,
 				4CDEF5BF1DEEFE4D002AAC00 /* ACHistoryView.swift */,
@@ -172,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDEF5B91DEEF373002AAC00 /* Layout.swift */,
+				4C4AA7D91DEFF7A500E23A9C /* conts.swift */,
 			);
 			path = Conts;
 			sourceTree = "<group>";
@@ -303,7 +303,6 @@
 				4CDEF5BE1DEEF5E3002AAC00 /* ACHotSearchCell.xib in Resources */,
 				4CDEF5B41DEEEA89002AAC00 /* ACSearchTitleCell.xib in Resources */,
 				4CBA48481DEEC05F00D4A48B /* LaunchScreen.storyboard in Resources */,
-				4CDEF5AB1DEECFE2002AAC00 /* ACSearchController.xib in Resources */,
 				4CBA48451DEEC05F00D4A48B /* Assets.xcassets in Resources */,
 				4CBA48431DEEC05F00D4A48B /* Main.storyboard in Resources */,
 				4CDEF5B81DEEEAA1002AAC00 /* ACSearchContentCell.xib in Resources */,
@@ -331,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBA486E1DEEC11A00D4A48B /* ACSearchBar.swift in Sources */,
 				4CDEF5AF1DEEDD00002AAC00 /* ACSearchViewController.swift in Sources */,
 				4CDEF5AD1DEED0F3002AAC00 /* ACSearchResultController.swift in Sources */,
 				4CDEF5C91DEF063D002AAC00 /* ACHistoryCell.swift in Sources */,
@@ -341,7 +339,9 @@
 				4CDEF5B71DEEEAA1002AAC00 /* ACSearchContentCell.swift in Sources */,
 				4CDEF5BA1DEEF373002AAC00 /* Layout.swift in Sources */,
 				4CDEF5B31DEEEA89002AAC00 /* ACSearchTitleCell.swift in Sources */,
+				4C4AA7DA1DEFF7A500E23A9C /* conts.swift in Sources */,
 				4CBA483E1DEEC05F00D4A48B /* AppDelegate.swift in Sources */,
+				4C4AA7D81DEFD07600E23A9C /* ACBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

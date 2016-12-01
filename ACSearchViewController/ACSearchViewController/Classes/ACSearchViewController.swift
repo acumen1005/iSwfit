@@ -12,46 +12,35 @@ let CELL_IDENTIFIER: String = "UITableViewCell"
 let TITLE_CELL_IDENTIFIER: String = "ACSearchTitleCell"
 let CONTENT_CELL_IDENTIFIER: String = "ACSearchContentCell"
 
-class ACSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class ACSearchViewController: ACBaseViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
-    var searchBar: ACSearchBar?
-    var backButton: UIBarButtonItem?
+    var searchBar: UISearchBar?
     var cancelButton: UIBarButtonItem?
     var tableView: UITableView?
     var historyView: ACHistoryView?
+    var hotSearchs: NSArray = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tableView = UITableView(frame: self.view.bounds, style: .plain)
-        tableView?.delegate = self
-        tableView?.dataSource = self
-        tableView?.separatorStyle = .none
         
-        searchBar = ACSearchBar(frame: CGRect.zero)
-        searchBar?.barStyle = .default
-        searchBar?.delegate = self
-        searchBar?.searchBarStyle = .minimal
-        
-        let hx = self.view.bounds.origin.x
-        let hy = self.view.bounds.origin.y + 64
-        historyView = ACHistoryView(frame: CGRect(x: hx, y: hy, width: SCREEN_WIDTH, height: 3 * CELL_HISTORY_HEIGHT))
-        
-        backButton = UIBarButtonItem(image: UIImage(named: "NavigationBack"), style: .plain, target: self, action: #selector(onClick2Back))
-        
-        cancelButton = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(onClick2Cancel))
-        
-        self.navigationItem.leftBarButtonItem = backButton
-        self.navigationItem.titleView = searchBar
+        configSubViews()
+        configNavigtionBar()
         
         tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: CELL_IDENTIFIER)
         tableView?.register(UINib(nibName: TITLE_CELL_IDENTIFIER, bundle: nil), forCellReuseIdentifier: TITLE_CELL_IDENTIFIER)
         
         tableView?.register(UINib(nibName: CONTENT_CELL_IDENTIFIER, bundle: nil), forCellReuseIdentifier: CONTENT_CELL_IDENTIFIER)
         
-        self.view.addSubview(tableView!)
+        self.hotSearchs = ["杭州","北京","上海","深圳","广州","宁波","温州"]
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        searchBar?.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,14 +58,36 @@ class ACSearchViewController: UIViewController, UITableViewDataSource, UITableVi
         dismissHistoryView()
     }
     
-    func onClick2Back() {
+    // MARK: -  private methods
+    
+    private func configSubViews() {
+        tableView = UITableView(frame: self.view.bounds, style: .plain)
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.separatorStyle = .none
         
-        _ = self.navigationController?.popViewController(animated: true)
+        searchBar = UISearchBar(frame: CGRect.zero)
+        searchBar?.barStyle = .default
+        searchBar?.delegate = self
+        searchBar?.searchBarStyle = .minimal
+        
+        let hx = self.view.bounds.origin.x
+        let hy = self.view.bounds.origin.y + 64
+        historyView = ACHistoryView(frame: CGRect(x: hx, y: hy, width: SCREEN_WIDTH, height: CGFloat(HISTORY_COUNT) * CELL_HISTORY_HEIGHT))
+        historyView?.pushSearchViewResultControllerClosure = {(string: String) -> Void in
+            
+            self.pushResultContolleAndDismissHistoryView(string: string)
+        }
+        
+        self.navigationItem.titleView = searchBar
+        self.view.addSubview(tableView!)
     }
     
-    // mark - 
+    private func configNavigtionBar() {
+        cancelButton = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(onClick2Cancel))
+    }
     
-    func routeCellWithIndexPath(withIndexPath: IndexPath) -> UITableViewCell {
+    private func routeCellWithIndexPath(withIndexPath: IndexPath) -> UITableViewCell {
         
         if(withIndexPath.row == 0){
             return (tableView?.dequeueReusableCell(withIdentifier: TITLE_CELL_IDENTIFIER, for: withIndexPath))!
@@ -86,17 +97,40 @@ class ACSearchViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    func presentHistoryView() {
+    private func renderSearchContentCell(_ cell: UITableViewCell) -> ACSearchContentCell {
+        
+        return cell as! ACSearchContentCell
+    }
+    
+    private func presentHistoryView() {
         self.view.addSubview(historyView!)
         self.tableView?.removeFromSuperview()
     }
     
-    func dismissHistoryView() {
+    private func dismissHistoryView() {
         historyView?.removeFromSuperview()
         self.view.addSubview(self.tableView!)
     }
     
-    // MARK -
+    private func pushResultContolleAndDismissHistoryView(string: String) {
+        
+        dismissHistoryView()
+        self.searchBar?.endEditing(true)
+        
+        //加入history
+        addHistorySearchItem(string: string)
+        
+        let title = "搜索: \(string)"
+        let vc: ACSearchResultController = ACSearchResultController()
+        vc.title = title
+        _ = self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func addHistorySearchItem(string: String) {
+        historyView?.addHistoryArray(string: string)
+    }
+    
+    // MARK: - UITableViewDelegate & UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -110,6 +144,16 @@ class ACSearchViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let cell = routeCellWithIndexPath(withIndexPath: indexPath)
         
+        if 0 == indexPath.row {
+        
+        }
+        else {
+            renderSearchContentCell(cell).setHotSearchs(array: self.hotSearchs)
+            renderSearchContentCell(cell).pushSearchViewResultControllerClosure = {(string: String) -> Void in
+                
+                self.pushResultContolleAndDismissHistoryView(string: string)
+            }
+        }
         
         return cell
     }
@@ -123,15 +167,19 @@ class ACSearchViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    // MARK: - 
+    // MARK: -  UISearchBarDelegate
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.navigationItem.rightBarButtonItem = cancelButton
         presentHistoryView()
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        pushResultContolleAndDismissHistoryView(string: searchBar.text!)
+        
+        // code store to backend request
+    }
     
-
     /*
     // MARK: - Navigation
 
