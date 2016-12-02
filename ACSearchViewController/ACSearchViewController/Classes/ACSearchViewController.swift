@@ -12,7 +12,7 @@ let CELL_IDENTIFIER: String = "UITableViewCell"
 let TITLE_CELL_IDENTIFIER: String = "ACSearchTitleCell"
 let CONTENT_CELL_IDENTIFIER: String = "ACSearchContentCell"
 
-class ACSearchViewController: ACBaseViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class ACSearchViewController: ACBaseViewController {
 
     var searchBar: UISearchBar?
     var cancelButton: UIBarButtonItem?
@@ -49,13 +49,47 @@ class ACSearchViewController: ACBaseViewController, UITableViewDataSource, UITab
     }
     
     
-    // MARK -
+    // MARK - public methods
     
     func onClick2Cancel() {
         
         self.navigationItem.rightBarButtonItem = nil
         searchBar?.endEditing(true)
         dismissHistoryView()
+    }
+    
+    func routeCellWithIndexPath(withIndexPath: IndexPath) -> UITableViewCell {
+        
+        if(withIndexPath.row == 0){
+            return (tableView?.dequeueReusableCell(withIdentifier: TITLE_CELL_IDENTIFIER, for: withIndexPath))!
+        }
+        else {
+            return (tableView?.dequeueReusableCell(withIdentifier: CONTENT_CELL_IDENTIFIER, for: withIndexPath))!
+        }
+    }
+    
+    func renderSearchContentCell(_ cell: UITableViewCell) -> ACSearchContentCell {
+        
+        return cell as! ACSearchContentCell
+    }
+    
+    func pushResultContolleAndDismissHistoryView(string: String) {
+        
+        dismissHistoryView()
+        self.searchBar?.endEditing(true)
+        
+        //加入history
+        addHistorySearchItem(string: string)
+        
+        let title = "搜索: \(string)"
+        let vc: ACSearchResultController = ACSearchResultController()
+        vc.title = title
+        _ = self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func presentHistoryView() {
+        self.view.addSubview(historyView!)
+        self.tableView?.removeFromSuperview()
     }
     
     // MARK: -  private methods
@@ -87,65 +121,53 @@ class ACSearchViewController: ACBaseViewController, UITableViewDataSource, UITab
         cancelButton = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(onClick2Cancel))
     }
     
-    private func routeCellWithIndexPath(withIndexPath: IndexPath) -> UITableViewCell {
-        
-        if(withIndexPath.row == 0){
-            return (tableView?.dequeueReusableCell(withIdentifier: TITLE_CELL_IDENTIFIER, for: withIndexPath))!
-        }
-        else {
-            return (tableView?.dequeueReusableCell(withIdentifier: CONTENT_CELL_IDENTIFIER, for: withIndexPath))!
-        }
-    }
-    
-    private func renderSearchContentCell(_ cell: UITableViewCell) -> ACSearchContentCell {
-        
-        return cell as! ACSearchContentCell
-    }
-    
-    private func presentHistoryView() {
-        self.view.addSubview(historyView!)
-        self.tableView?.removeFromSuperview()
-    }
-    
     private func dismissHistoryView() {
         historyView?.removeFromSuperview()
         self.view.addSubview(self.tableView!)
     }
     
-    private func pushResultContolleAndDismissHistoryView(string: String) {
-        
-        dismissHistoryView()
-        self.searchBar?.endEditing(true)
-        
-        //加入history
-        addHistorySearchItem(string: string)
-        
-        let title = "搜索: \(string)"
-        let vc: ACSearchResultController = ACSearchResultController()
-        vc.title = title
-        _ = self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     private func addHistorySearchItem(string: String) {
         historyView?.addHistoryArray(string: string)
     }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+}
+
+extension ACSearchViewController: UISearchBarDelegate {
     
-    // MARK: - UITableViewDelegate & UITableViewDataSource
+    // MARK: -  UISearchBarDelegate
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.navigationItem.rightBarButtonItem = cancelButton
+        presentHistoryView()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        pushResultContolleAndDismissHistoryView(string: searchBar.text!)
+        
+        // code store to backend request
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+}
+
+extension ACSearchViewController: UITableViewDelegate {
+    
+    // MARK: - UITableViewDelegate
+    
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = routeCellWithIndexPath(withIndexPath: indexPath)
         
         if 0 == indexPath.row {
-        
+            
         }
         else {
             renderSearchContentCell(cell).setHotSearchs(array: self.hotSearchs)
@@ -166,28 +188,17 @@ class ACSearchViewController: ACBaseViewController, UITableViewDataSource, UITab
             return 100
         }
     }
-    
-    // MARK: -  UISearchBarDelegate
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.navigationItem.rightBarButtonItem = cancelButton
-        presentHistoryView()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        pushResultContolleAndDismissHistoryView(string: searchBar.text!)
-        
-        // code store to backend request
-    }
-    
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+extension ACSearchViewController: UITableViewDataSource {
 
+    // MARK: -  UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
 }

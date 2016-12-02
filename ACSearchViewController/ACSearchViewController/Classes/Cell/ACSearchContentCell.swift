@@ -10,7 +10,7 @@ import UIKit
 
 let CELL_COLLECTION_IDENTIFIER: String = "ACHotSearchCell"
 
-class ACSearchContentCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class ACSearchContentCell: UITableViewCell {
 
 //    var collectionView: UICollectionView?
     var hotSearchs: NSArray = NSArray()
@@ -44,12 +44,27 @@ class ACSearchContentCell: UITableViewCell, UICollectionViewDelegate, UICollecti
         // Configure the view for the selected state
     }
     
-    // MARK - UICollectionViewDelegate & UICollectionViewDataSource
+    // MARK - 
+    
+    func setHotSearchs(array: NSArray) {
+        self.hotSearchs = array
+        self.collectionView?.reloadData()
+    }
+}
 
+extension ACSearchContentCell: UICollectionViewDataSource {
+    
+    // MARK: - UICollectionViewDataSource
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return self.hotSearchs.count
     }
+}
+
+extension ACSearchContentCell: UICollectionViewDelegate {
+    
+    // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -66,12 +81,4 @@ class ACSearchContentCell: UITableViewCell, UICollectionViewDelegate, UICollecti
             self.pushSearchViewResultControllerClosure!(self.hotSearchs[indexPath.row] as! String)
         }
     }
-    
-    // MARK - 
-    
-    func setHotSearchs(array: NSArray) {
-        self.hotSearchs = array
-        self.collectionView?.reloadData()
-    }
-    
 }

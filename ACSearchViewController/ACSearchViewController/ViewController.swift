@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: ACBaseViewController, UISearchBarDelegate {
+class ViewController: ACBaseViewController {
 
     var searchBar: UISearchBar?
     var backButton: UIBarButtonItem?
@@ -50,11 +50,11 @@ class ViewController: ACBaseViewController, UISearchBarDelegate {
         
         self.navigationController?.pushViewController(searchController, animated: true)
     }
-    
-    
+}
+
+extension ViewController: UISearchBarDelegate {
     
     // MARK: - UISearchBarDelegate
-    
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         print("search button")
         

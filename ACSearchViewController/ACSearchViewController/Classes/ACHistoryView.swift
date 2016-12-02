@@ -14,7 +14,7 @@ protocol ACHistoryViewDelegate: NSObjectProtocol{
     func pushSearchViewResultController(string: String) -> Void;
 }
 
-class ACHistoryView: UIView, UITableViewDelegate, UITableViewDataSource {
+class ACHistoryView: UIView {
 
     var tableView: UITableView?
     var height: CGFloat?
@@ -83,9 +83,7 @@ class ACHistoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         self.tableView?.reloadData()
     }
     
-    // MARK: - private methods
-    
-    private func isExitsForString(string: String) -> Bool {
+    func isExitsForString(string: String) -> Bool {
         
         if (fileManager?.fileExists(atPath: CACHE_HISTORY_PATH))! {
             let strings = readHistoryFromDisk() as! [String]
@@ -96,7 +94,7 @@ class ACHistoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    private func storeHistory2Disk(_ array: NSArray) {
+    func storeHistory2Disk(_ array: NSArray) {
         
         if (fileManager?.fileExists(atPath: CACHE_HISTORY_PATH))! {
             array.write(toFile: CACHE_HISTORY_PATH, atomically: true)
@@ -107,7 +105,7 @@ class ACHistoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    private func readHistoryFromDisk() -> NSArray{
+    func readHistoryFromDisk() -> NSArray{
         
         if (fileManager?.fileExists(atPath: CACHE_HISTORY_PATH))! {
             return NSArray(contentsOfFile: CACHE_HISTORY_PATH)!
@@ -117,7 +115,7 @@ class ACHistoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    private func cleanHistoryFromDisk() -> Void {
+    func cleanHistoryFromDisk() -> Void {
         
         if (fileManager?.fileExists(atPath: CACHE_HISTORY_PATH))! {
             do {
@@ -128,10 +126,12 @@ class ACHistoryView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    // MARK: - UITableViewDelegate & UITabaleViewDataSource
+}
+
+extension ACHistoryView: UITableViewDataSource {
     
+    // MARK: - UITabaleViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
     
@@ -144,9 +144,13 @@ class ACHistoryView: UIView, UITableViewDelegate, UITableViewDataSource {
             return array.count
         }
     }
+}
+
+extension ACHistoryView: UITableViewDelegate {
     
+    // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_HISTORY_IDENTIFIER, for: indexPath) as! ACHistoryCell
         
         if indexPath.row == array.count {
@@ -178,5 +182,4 @@ class ACHistoryView: UIView, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-
 }
