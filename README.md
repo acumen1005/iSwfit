@@ -24,4 +24,7 @@ self.view.addSubview(cycleScrollView!)
 
 ![](ACSearchViewController.gif)  
 
+### NotificationDemo  
+一个 iOS10 UserNotification 推送 demo
+
 
