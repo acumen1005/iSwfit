@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let zanAction = UNNotificationAction(
         identifier: myNotificationAction.zan.rawValue,
         title: "点赞",
-        options: [.foreground])
+        options: [.authenticationRequired])
       
       let cancelAction = UNNotificationAction(
         identifier: myNotificationAction.cancel.rawValue,
@@ -160,7 +160,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
       case .InputSomething:
         handleInputSomething(response: response)
       case .myNotificationCategory:
-        var _ = 0
+        handleMyNotificationCategory(response: response)
       }
     }
     completionHandler()
@@ -182,8 +182,26 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     if !text.isEmpty {
       print("repsone = \(text)")
     }
-    
   }
+    
+    private func handleMyNotificationCategory(response: UNNotificationResponse) {
+        let text: String
+        
+        if let actionType = myNotificationAction(rawValue: response.actionIdentifier) {
+            switch actionType {
+            case .comment: text = (response as! UNTextInputNotificationResponse).userText
+            case .zan: text = "赞一下"
+            case .cancel: text = ""
+            }
+        } else {
+            text = ""
+        }
+        
+        if !text.isEmpty {
+            print("repsone = \(text)")
+        }
+        
+    }
 }
 
 

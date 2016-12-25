@@ -25,6 +25,11 @@ self.view.addSubview(cycleScrollView!)
 ![](ACSearchViewController.gif)  
 
 ### NotificationDemo  
+
 一个 iOS10 UserNotification 推送 demo
+
+### ExtensionDemo  
+
+一个 App Extension 的 demo，其中用的是 Today 扩展
 
 
