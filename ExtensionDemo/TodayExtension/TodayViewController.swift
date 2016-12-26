@@ -8,6 +8,7 @@
 
 import UIKit
 import NotificationCenter
+import ExtensionFramework
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
@@ -18,6 +19,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Do any additional setup after loading the view from its nib.
         
         let userDefault = UserDefaults(suiteName: "group.extension.demo")
+        
+        
         
         if let url = userDefault?.value(forKey: "com.acumen.url") as? String {
             hintLabel.text = "来自网络图片"
@@ -30,7 +33,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             let data = userDefault?.value(forKey: "com.acumen.data")
             iconView.image = UIImage(data: data as! Data)
-            
         }
     }
     

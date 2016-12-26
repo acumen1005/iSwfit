@@ -33,7 +33,6 @@ class ViewController: UIViewController {
         let userDefault = UserDefaults(suiteName: "group.extension.demo")
         userDefault?.set(str, forKey: "com.acumen.url")
         userDefault?.synchronize()
-        
     }
     
     @IBAction func onClickToChange(_ sender: Any) {

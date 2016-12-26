@@ -20,9 +20,9 @@
 		4C0F29AB1E0FA825007AD8D1 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C0F299E1E0FA825007AD8D1 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C0F29C01E0FB9D8007AD8D1 /* ExtensionFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0F29B71E0FB9D8007AD8D1 /* ExtensionFramework.framework */; };
 		4C0F29C71E0FB9D8007AD8D1 /* ExtensionFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F29C61E0FB9D8007AD8D1 /* ExtensionFrameworkTests.swift */; };
-		4C0F29C91E0FB9D8007AD8D1 /* ExtensionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0F29B91E0FB9D8007AD8D1 /* ExtensionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C0F29CC1E0FB9D8007AD8D1 /* ExtensionFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0F29B71E0FB9D8007AD8D1 /* ExtensionFramework.framework */; };
 		4C0F29CD1E0FB9D8007AD8D1 /* ExtensionFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0F29B71E0FB9D8007AD8D1 /* ExtensionFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C3BC62A1E10BF3900082A9E /* EFUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3BC6291E10BF3900082A9E /* EFUserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,11 +117,11 @@
 		4C0F29B01E0FA82F007AD8D1 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		4C0F29B11E0FA83E007AD8D1 /* ExtensionDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExtensionDemo.entitlements; sourceTree = "<group>"; };
 		4C0F29B71E0FB9D8007AD8D1 /* ExtensionFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExtensionFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C0F29B91E0FB9D8007AD8D1 /* ExtensionFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionFramework.h; sourceTree = "<group>"; };
 		4C0F29BA1E0FB9D8007AD8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C0F29BF1E0FB9D8007AD8D1 /* ExtensionFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExtensionFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0F29C61E0FB9D8007AD8D1 /* ExtensionFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFrameworkTests.swift; sourceTree = "<group>"; };
 		4C0F29C81E0FB9D8007AD8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C3BC6291E10BF3900082A9E /* EFUserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFUserDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,8 +254,8 @@
 		4C0F29B81E0FB9D8007AD8D1 /* ExtensionFramework */ = {
 			isa = PBXGroup;
 			children = (
-				4C0F29B91E0FB9D8007AD8D1 /* ExtensionFramework.h */,
 				4C0F29BA1E0FB9D8007AD8D1 /* Info.plist */,
+				4C3BC6291E10BF3900082A9E /* EFUserDefault.swift */,
 			);
 			path = ExtensionFramework;
 			sourceTree = "<group>";
@@ -276,7 +276,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0F29C91E0FB9D8007AD8D1 /* ExtensionFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +438,7 @@
 					4C0F29B61E0FB9D8007AD8D1 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = N364U2JVXK;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					4C0F29BE1E0FB9D8007AD8D1 = {
@@ -559,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3BC62A1E10BF3900082A9E /* EFUserDefault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +846,7 @@
 		4C0F29CF1E0FB9D8007AD8D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -852,12 +854,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ExtensionFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = acumen.ExtensionFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -867,6 +875,7 @@
 		4C0F29D01E0FB9D8007AD8D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -874,12 +883,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ExtensionFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = acumen.ExtensionFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -933,6 +947,7 @@
 				4C0F29931E0FA745007AD8D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C0F29941E0FA745007AD8D1 /* Build configuration list for PBXNativeTarget "ExtensionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -941,6 +956,7 @@
 				4C0F29961E0FA745007AD8D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C0F29971E0FA745007AD8D1 /* Build configuration list for PBXNativeTarget "ExtensionDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -949,6 +965,7 @@
 				4C0F29991E0FA745007AD8D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C0F29AC1E0FA825007AD8D1 /* Build configuration list for PBXNativeTarget "TodayExtension" */ = {
 			isa = XCConfigurationList;
@@ -957,6 +974,7 @@
 				4C0F29AE1E0FA825007AD8D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C0F29CE1E0FB9D8007AD8D1 /* Build configuration list for PBXNativeTarget "ExtensionFramework" */ = {
 			isa = XCConfigurationList;
@@ -965,6 +983,7 @@
 				4C0F29D01E0FB9D8007AD8D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C0F29D21E0FB9D8007AD8D1 /* Build configuration list for PBXNativeTarget "ExtensionFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -973,6 +992,7 @@
 				4C0F29D41E0FB9D8007AD8D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
