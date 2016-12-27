@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var netButton: UIButton!
     @IBOutlet weak var changeButton: UIButton!
     let texts: [String] = ["搞个大新闻","闷声发大财"]
@@ -19,7 +20,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    
+        
+        shareLabel.numberOfLines = 0
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillResignActive), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +33,7 @@ class ViewController: UIViewController {
 
     @IBAction func onClickToDownload(_ sender: Any) {
         
-        let str = "http://ww2.sinaimg.cn/mw690/934b5ef8gw1fasejq1g84j20x807iwgp.jpg"
+        let str = "http://ww2.sinaimg.cn/thumbnail/934b5ef8gw1fapacnkgk6j20oz0oz420.jpg"
         let userDefault = UserDefaults(suiteName: "group.extension.demo")
         userDefault?.set(str, forKey: "com.acumen.url")
         userDefault?.synchronize()
@@ -56,11 +60,12 @@ class ViewController: UIViewController {
     }
     
     func applicationWillResignActive() {
-        self.save()
-    }
-
-    func save() {
         
+        let userDefault = UserDefaults(suiteName: "group.extension.demo")
+        let url = userDefault?.value(forKey: "com.acumen.share.url") as? String
+        if let tmp = url {
+            self.shareLabel.text = "分享链接: \(tmp)"
+        }
     }
 }
 

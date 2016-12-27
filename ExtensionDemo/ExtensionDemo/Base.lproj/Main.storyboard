@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRr-SL-VSF">
-                                <rect key="frame" x="80" y="220" width="215" height="34"/>
+                                <rect key="frame" x="80" y="150" width="215" height="34"/>
                                 <color key="backgroundColor" red="0.2392156869" green="0.67450982329999998" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="点击改变">
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYY-W1-QBc">
-                                <rect key="frame" x="80" y="314" width="215" height="34"/>
+                                <rect key="frame" x="80" y="244" width="215" height="34"/>
                                 <color key="backgroundColor" red="0.2392156869" green="0.67450982329999998" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="加载网络图片">
@@ -43,20 +43,30 @@
                                     <action selector="onClickToDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kGp-q2-Ccd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mig-jh-ffl">
+                                <rect key="frame" x="0.0" y="356" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JYY-W1-QBc" firstAttribute="top" secondItem="IRr-SL-VSF" secondAttribute="bottom" constant="60" id="2uh-g8-dtR"/>
-                            <constraint firstItem="IRr-SL-VSF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="Ccx-qa-G0j"/>
+                            <constraint firstItem="IRr-SL-VSF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="130" id="Ccx-qa-G0j"/>
+                            <constraint firstItem="mig-jh-ffl" firstAttribute="top" secondItem="JYY-W1-QBc" secondAttribute="bottom" constant="78" id="NYV-yA-Pu4"/>
                             <constraint firstAttribute="trailing" secondItem="JYY-W1-QBc" secondAttribute="trailing" constant="80" id="Xbh-R3-7Yb"/>
                             <constraint firstAttribute="trailing" secondItem="IRr-SL-VSF" secondAttribute="trailing" constant="80" id="arr-2P-NPl"/>
+                            <constraint firstItem="mig-jh-ffl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gcA-vp-ZVi"/>
                             <constraint firstItem="JYY-W1-QBc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="80" id="z3F-0Y-id5"/>
                             <constraint firstItem="IRr-SL-VSF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="80" id="zlh-tQ-cVv"/>
+                            <constraint firstAttribute="trailing" secondItem="mig-jh-ffl" secondAttribute="trailing" id="zqP-ti-9A8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="changeButton" destination="IRr-SL-VSF" id="p1y-YE-1w1"/>
                         <outlet property="netButton" destination="JYY-W1-QBc" id="aGn-Tm-4UN"/>
+                        <outlet property="shareLabel" destination="mig-jh-ffl" id="Io0-jv-uha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

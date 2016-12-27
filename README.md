@@ -4,7 +4,7 @@
 ### ACCycleScrollView
 简单的用 swfit 封装 banner 轮播的控件
 
-![](ACCycleScrollView.gif)
+![](Resources/ACCycleScrollView.gif)
 
 ```
 let imageNames = ["banner1","banner2","banner3","banner1","banner2","banner3"]
@@ -22,7 +22,7 @@ self.view.addSubview(cycleScrollView!)
 ### ACSearchViewController
 一个搜索 ＋ 热门搜索 ＋ 搜索纪录的控件
 
-![](ACSearchViewController.gif)  
+![](Resources/ACSearchViewController.gif)  
 
 ### NotificationDemo  
 
@@ -30,6 +30,9 @@ self.view.addSubview(cycleScrollView!)
 
 ### ExtensionDemo  
 
-一个 App Extension 的 demo，其中用的是 Today 扩展
+一个 App Extension 的 demo, 集成了 Share 和 Today 扩展
+
+![](Resources/extesion-1.gif) 
+![](Resources/extesion-2.gif) 
 
 
