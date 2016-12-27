@@ -32,7 +32,7 @@ self.view.addSubview(cycleScrollView!)
 
 一个 App Extension 的 demo, 集成了 Share 和 Today 扩展
 
-![](Resources/extesion-1.gif) 
-![](Resources/extesion-2.gif) 
+![](Resources/extension-1.gif) 
+![](Resources/extension-2.gif) 
 
 
