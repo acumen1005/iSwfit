@@ -1,5 +1,5 @@
-# iSwfit
-学习 Swfit
+# iSwift
+学习 Swift
 
 ### ACCycleScrollView
 简单的用 swfit 封装 banner 轮播的控件
