@@ -36,3 +36,25 @@ self.view.addSubview(cycleScrollView!)
 ![](Resources/extension-2.gif) 
 
 
+### ACWaterfallLayout
+
+一个继承自 UICollectionViewLayout 实现的瀑布流
+
+![](Resources/ACWaterfallLayout.gif)
+
+```
+collectionView.collectionViewLayout = layout
+
+func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, indexPath: IndexPath) -> CGSize {
+        return indexPaths[indexPath.row].size
+}
+
+```
+
+实例化一个 ACCollectionViewLayout 对象，实现他的代理方法既可以使用瀑布流的功能，目前只支持一个 section，未完待续
+
+#### TODO
+[] 支持多个 section
+[] 加上 Header 和 footer
+   
+
