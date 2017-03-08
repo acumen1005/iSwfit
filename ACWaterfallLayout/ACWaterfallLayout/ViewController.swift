@@ -16,6 +16,7 @@ struct Layout {
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ACCollectionViewLayoutDelegate {
 
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var indexPaths: [UIImage] = []
     
@@ -25,13 +26,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.delegate = self
         collectionView.dataSource = self
         ACImageCollectionViewCell.registerNib(collectionView)
+        
+        collectionView.register(ACHeaderCollectionReusableView.nib(), forSupplementaryViewOfKind: ACCollectionViewLayout.ACCollectionViewSectionHeader, withReuseIdentifier: ACHeaderCollectionReusableView.className)
+        collectionView.register(ACFooterrCollectionReusableView.nib(), forSupplementaryViewOfKind: ACCollectionViewLayout.ACCollectionViewSectionFooter, withReuseIdentifier: ACFooterrCollectionReusableView.className)
         let layout = ACCollectionViewLayout()
+        
         layout.delegate = self
         layout.numberOfRow = 2
+        layout.sectionHeaderHeight = 100
+        layout.sectionFooterHeight = 200
         collectionView.collectionViewLayout = layout
         
         var images: [UIImage] = []
-        for _ in 0 ..< 30 {
+        for _ in 0 ..< 20 {
             let index = arc4random_uniform(4)
             images.append(UIImage(named: "op\(index).jpg")!)
         }
@@ -44,7 +51,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,6 +65,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == ACCollectionViewLayout.ACCollectionViewSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ACHeaderCollectionReusableView.className, for: indexPath) as! ACHeaderCollectionReusableView
+            headerView.headerImageView.image = UIImage(named: "op1.jpg")
+            return headerView
+        } else if kind == ACCollectionViewLayout.ACCollectionViewSectionFooter {
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ACFooterrCollectionReusableView.className, for: indexPath) as! ACFooterrCollectionReusableView
+            footerView.footerImageView.image = UIImage(named: "op0.jpg")
+            return footerView
+        }
+        return UICollectionReusableView()
+    }
+    
     func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, indexPath: IndexPath) -> CGSize {
         return indexPaths[indexPath.row].size
     }
@@ -68,8 +88,12 @@ extension UIView {
         return UINib(nibName: "\(self.classForCoder())", bundle: nil)
     }
     
-    class  func registerNib(_ collectionView: UICollectionView) {
-        collectionView .register(self.nib(), forCellWithReuseIdentifier: "\(self.classForCoder())")
+    class func registerNib(_ collectionView: UICollectionView) {
+        collectionView.register(self.nib(), forCellWithReuseIdentifier: "\(self.classForCoder())")
+    }
+    
+    class var className: String {
+        return "\(self.classForCoder())"
     }
 }
 

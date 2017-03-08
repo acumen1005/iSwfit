@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ACFooterrCollectionReusableView" customModule="ACWaterfallLayout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="op0" translatesAutoresizingMaskIntoConstraints="NO" id="WiB-An-eu5">
+                    <rect key="frame" x="0.0" y="0.0" width="394" height="112"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="WiB-An-eu5" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="QCd-5Q-seF"/>
+                <constraint firstAttribute="trailing" secondItem="WiB-An-eu5" secondAttribute="trailing" id="Ydf-pa-4hZ"/>
+                <constraint firstItem="WiB-An-eu5" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="rv9-sh-Czj"/>
+                <constraint firstAttribute="bottom" secondItem="WiB-An-eu5" secondAttribute="bottom" id="vYJ-AL-Xhk"/>
+            </constraints>
+            <connections>
+                <outlet property="footerImageView" destination="WiB-An-eu5" id="Cea-in-7Gd"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="64"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="op0" width="211" height="140"/>
+    </resources>
+</document>

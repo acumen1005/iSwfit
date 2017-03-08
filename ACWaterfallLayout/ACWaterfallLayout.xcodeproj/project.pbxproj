@@ -15,6 +15,10 @@
 		4C8B75ED1E69592E0099EB30 /* ACCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B75EC1E69592E0099EB30 /* ACCollectionViewLayout.swift */; };
 		4C9DFAA11E6E865100418016 /* ACImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9DFAA01E6E865100418016 /* ACImageCollectionViewCell.xib */; };
 		4C9DFAA51E6E873200418016 /* ACImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DFAA41E6E873200418016 /* ACImageCollectionViewCell.swift */; };
+		4C9DFAE51E6FECCB00418016 /* ACHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DFAE31E6FECCB00418016 /* ACHeaderCollectionReusableView.swift */; };
+		4C9DFAE61E6FECCB00418016 /* ACHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9DFAE41E6FECCB00418016 /* ACHeaderCollectionReusableView.xib */; };
+		4C9DFAE91E6FECDE00418016 /* ACFooterrCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DFAE71E6FECDE00418016 /* ACFooterrCollectionReusableView.swift */; };
+		4C9DFAEA1E6FECDE00418016 /* ACFooterrCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9DFAE81E6FECDE00418016 /* ACFooterrCollectionReusableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		4C8B75EC1E69592E0099EB30 /* ACCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACCollectionViewLayout.swift; sourceTree = "<group>"; };
 		4C9DFAA01E6E865100418016 /* ACImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C9DFAA41E6E873200418016 /* ACImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C9DFAE31E6FECCB00418016 /* ACHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		4C9DFAE41E6FECCB00418016 /* ACHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		4C9DFAE71E6FECDE00418016 /* ACFooterrCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACFooterrCollectionReusableView.swift; sourceTree = "<group>"; };
+		4C9DFAE81E6FECDE00418016 /* ACFooterrCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACFooterrCollectionReusableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				4C8B75DA1E694B600099EB30 /* AppDelegate.swift */,
 				4C8B75DC1E694B600099EB30 /* ViewController.swift */,
 				4C9DFAA41E6E873200418016 /* ACImageCollectionViewCell.swift */,
+				4C9DFAE31E6FECCB00418016 /* ACHeaderCollectionReusableView.swift */,
+				4C9DFAE41E6FECCB00418016 /* ACHeaderCollectionReusableView.xib */,
+				4C9DFAE71E6FECDE00418016 /* ACFooterrCollectionReusableView.swift */,
+				4C9DFAE81E6FECDE00418016 /* ACFooterrCollectionReusableView.xib */,
 				4C9DFAA01E6E865100418016 /* ACImageCollectionViewCell.xib */,
 				4C8B75EC1E69592E0099EB30 /* ACCollectionViewLayout.swift */,
 				4C8B75DE1E694B600099EB30 /* Main.storyboard */,
@@ -133,10 +145,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9DFAE61E6FECCB00418016 /* ACHeaderCollectionReusableView.xib in Resources */,
 				4C9DFAA11E6E865100418016 /* ACImageCollectionViewCell.xib in Resources */,
 				4C8B75E51E694B600099EB30 /* LaunchScreen.storyboard in Resources */,
 				4C8B75E21E694B600099EB30 /* Assets.xcassets in Resources */,
 				4C8B75E01E694B600099EB30 /* Main.storyboard in Resources */,
+				4C9DFAEA1E6FECDE00418016 /* ACFooterrCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,8 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9DFAA51E6E873200418016 /* ACImageCollectionViewCell.swift in Sources */,
+				4C9DFAE91E6FECDE00418016 /* ACFooterrCollectionReusableView.swift in Sources */,
 				4C8B75ED1E69592E0099EB30 /* ACCollectionViewLayout.swift in Sources */,
 				4C8B75DD1E694B600099EB30 /* ViewController.swift in Sources */,
+				4C9DFAE51E6FECCB00418016 /* ACHeaderCollectionReusableView.swift in Sources */,
 				4C8B75DB1E694B600099EB30 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

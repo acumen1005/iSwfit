@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ACHeaderCollectionReusableView" customModule="ACWaterfallLayout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="134"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="op1" translatesAutoresizingMaskIntoConstraints="NO" id="OQs-5T-gUu">
+                    <rect key="frame" x="0.0" y="0.0" width="382" height="134"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="OQs-5T-gUu" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="DWZ-L9-dxl"/>
+                <constraint firstAttribute="trailing" secondItem="OQs-5T-gUu" secondAttribute="trailing" id="UCf-VK-g7P"/>
+                <constraint firstAttribute="bottom" secondItem="OQs-5T-gUu" secondAttribute="bottom" id="W3y-p8-Ykr"/>
+                <constraint firstItem="OQs-5T-gUu" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="kZU-R5-s34"/>
+            </constraints>
+            <connections>
+                <outlet property="headerImageView" destination="OQs-5T-gUu" id="owc-rE-l0i"/>
+            </connections>
+            <point key="canvasLocation" x="15" y="21"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="op1" width="250" height="140"/>
+    </resources>
+</document>
