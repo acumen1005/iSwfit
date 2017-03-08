@@ -51,6 +51,6 @@ func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout
 
 ### TODO
 - [ ] 支持多个 section
-- [ ] 加上 Header 和 Footer
+- [x] 加上 sectionHeader 和 sectionFooter
    
 
