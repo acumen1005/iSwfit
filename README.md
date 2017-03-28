@@ -51,6 +51,10 @@ func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout
 
 ### TODO
 - [ ] 支持多个 section
+<<<<<<< HEAD
 - [x] 加上 sectionHeader 和 sectionFooter
+=======
+- [ ] 加上 Header 和 Footer
+>>>>>>> e9f2567... add: waterfullLayout
    
 
